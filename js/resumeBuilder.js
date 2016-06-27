@@ -17,6 +17,22 @@ var bio, work;
     biopic: 'images/fry.jpg',
   };
 
+  work = {
+    jobs: [
+      {
+        employer: 'VGS srl',
+        title: 'Software Engineer',
+        location: 'Milan, Italy',
+        dates: 'March, 2015 - Current time',
+        description:
+          'Successfull implementation and certification of large ' +
+          'Italian fiscal system (SIAE) for existing ticketing software. ' +
+          'Rich javascript PDF editor for building reports with iText. ' +
+          'Responsibility for Linux DevOps tasks.'
+      }
+    ]
+  };
+
   bio.display = function() {
     var formattedName = HTMLheaderName.replace('%data%', this.name);
     var formattedRole = HTMLheaderRole.replace('%data%', this.role);
@@ -38,22 +54,6 @@ var bio, work;
       var formattedSkill = HTMLskills.replace('%data%', skill);
       $('#skills').append(formattedSkill);
     });
-  };
-
-  work = {
-    jobs: [
-      {
-        employer: 'VGS srl',
-        title: 'Software Engineer',
-        location: 'Milan, Italy',
-        dates: 'March, 2015 - Current time',
-        description:
-          'Successfull implementation and certification of large ' +
-          'Italian fiscal system (SIAE) for existing ticketing software. ' +
-          'Rich javascript PDF editor for building reports with iText. ' +
-          'Responsibility for Linux DevOps tasks.'
-      }
-    ]
   };
 
   work.display = function() {
