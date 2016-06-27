@@ -1,4 +1,4 @@
-var bio, work;
+var bio, work, projects;
 
 (function() {
   'use strict';
@@ -18,19 +18,28 @@ var bio, work;
   };
 
   work = {
-    jobs: [
-      {
-        employer: 'VGS srl',
-        title: 'Software Engineer',
-        location: 'Milan, Italy',
-        dates: 'March, 2015 - Current time',
-        description:
-          'Successfull implementation and certification of large ' +
-          'Italian fiscal system (SIAE) for existing ticketing software. ' +
-          'Rich javascript PDF editor for building reports with iText. ' +
-          'Responsibility for Linux DevOps tasks.'
-      }
-    ]
+    jobs: [{
+      employer: 'VGS srl',
+      title: 'Software Engineer',
+      location: 'Milan, Italy',
+      dates: 'March, 2015 - Current time',
+      description:
+        'Successfull implementation and certification of large ' +
+        'Italian fiscal system (SIAE) for existing ticketing software. ' +
+        'Rich javascript PDF editor for building reports with iText. ' +
+        'Responsibility for Linux DevOps tasks.'
+    }]
+  };
+
+  projects = {
+    projects: [{
+      title: 'Portfolio',
+      dates: '2016',
+      description:
+        'The project is done during the Udacity ' +
+        '"Frontend Web Developer" nanodegree program.',
+      images: ['images/197x148.gif', 'images/197x148.gif']
+    }]
   };
 
   bio.display = function() {
@@ -38,7 +47,6 @@ var bio, work;
     var formattedRole = HTMLheaderRole.replace('%data%', this.role);
     var formattedPic = HTMLbioPic.replace('%data%', this.biopic);
     var formattedMsg = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
-    var formattedSkills =
 
     $.each(this.contacts, function(key, value) {
       var template = HTMLcontacts[key];
@@ -71,6 +79,24 @@ var bio, work;
     });
   };
 
+  projects.display = function() {
+    this.projects.forEach(function(project) {
+      var formattedTitle = HTMLprojectTitle.replace('%data%', project.title);
+      var formattedDates = HTMLprojectDates.replace('%data%', project.dates);
+      var formattedDescription = HTMLprojectDescription.replace('%data%', project.description);
+
+      $('#projects').append(HTMLprojectStart);
+      var $entry = $('.project-entry:last').append(formattedTitle);
+      $entry.append(formattedDates).append(formattedDescription);
+
+      project.images.forEach(function(img) {
+        var formattedImg = HTMLprojectImage.replace('%data%', img);
+        $entry.append(formattedImg);
+      });
+    });
+  };
+
   bio.display();
   work.display();
+  projects.display();
 })();
