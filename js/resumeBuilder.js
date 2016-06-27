@@ -24,7 +24,7 @@ var bio, work, projects, education;
       location: 'Milan, Italy',
       dates: 'March, 2015 - Current time',
       description:
-        'Successfull implementation and certification of large ' +
+        'Successfully implemented and passed certification with large ' +
         'Italian fiscal system (SIAE) for existing ticketing software. ' +
         'Rich javascript PDF editor for building reports with iText. ' +
         'Responsibility for Linux DevOps tasks.'
@@ -69,6 +69,7 @@ var bio, work, projects, education;
       var template = HTMLcontacts[key];
       var formattedContact = template.replace('%contact%', key).replace('%data%', value);
       $('#topContacts').append(formattedContact);
+      $('#footerContacts').append(formattedContact);
     });
 
     $('#header').prepend([formattedName, formattedRole]);
