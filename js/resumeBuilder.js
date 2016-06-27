@@ -145,4 +145,6 @@ var bio, work, projects, education;
   work.display();
   projects.display();
   education.display();
+
+  $('#mapDiv').append(googleMap);
 })();
