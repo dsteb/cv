@@ -5,7 +5,7 @@ var bio;
 
   bio = {
     name: 'Dmitrii Stebliuk',
-    role: 'Senior Fullstack Developer',
+    role: 'Senior Full Stack Developer',
     contacts: {
       mobile: '(+39) 327-568-43-13',
       email: 'dsteblyuk@gmail.com',
@@ -20,6 +20,9 @@ var bio;
   bio.display = function() {
     var formattedName = HTMLheaderName.replace('%data%', this.name);
     var formattedRole = HTMLheaderRole.replace('%data%', this.role);
+    var formattedPic = HTMLbioPic.replace('%data%', this.biopic);
+    var formattedMsg = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
+    var formattedSkills =
 
     $.each(this.contacts, function(key, value) {
       var template = HTMLcontacts[key];
@@ -28,6 +31,13 @@ var bio;
     });
 
     $('#header').prepend(formattedRole).prepend(formattedName);
+    $('#header').append(formattedPic).append(formattedMsg);
+
+    $('#header').append(HTMLskillsStart);
+    this.skills.forEach(function(skill) {
+      var formattedSkill = HTMLskills.replace('%data%', skill);
+      $('#skills').append(formattedSkill);
+    });
   };
 
   bio.display();
