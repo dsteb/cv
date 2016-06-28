@@ -14,7 +14,7 @@ var bio, work, projects, education;
       linkedin: 'https://linkedin.com/in/dmitrii-stebliuk'
     },
     welcomeMessage: 'Life is study',
-    skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Javascript', 'JQuery', 'Python'],
+    skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Javascript', 'JQuery', 'Python', 'Linux'],
     biopic: 'images/fry.jpg',
   };
 
@@ -25,7 +25,7 @@ var bio, work, projects, education;
       location: 'Milan, Italy',
       dates: 'Mar, 2015 - Current time',
       description:
-        'Successfully implemented and passed certification with large ' +
+        'Successfully implemented and passed certification of large ' +
         'Italian fiscal system (SIAE) for an existing ticketing software. ' +
         'Rich javascript PDF editor for building reports with iText. ' +
         'Responsibility for Linux DevOps tasks.'
