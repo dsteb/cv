@@ -61,8 +61,9 @@ var bio, work, projects, education;
         'Variety of frontend projects are done with the help of Udacity. ' +
         '<br><i>Tags: </i> HTML5, CSS, Bootstrap, JS, Responsiveness, ' +
         'Grunt, Semantic layout, ' +
-        'JQuery ',
-      images: ['images/project.jpg']
+        'JQuery, git',
+      images: ['images/project.jpg'],
+      url: 'https://dsteb.github.io/portfolio'
     }]
   };
 
@@ -142,6 +143,7 @@ var bio, work, projects, education;
   projects.display = function() {
     this.projects.forEach(function(project) {
       var formattedTitle = HTMLprojectTitle.replace('%data%', project.title);
+      formattedTitle = formattedTitle.replace('#', project.url);
       var formattedDates = HTMLprojectDates.replace('%data%', project.dates);
       var formattedDescription = HTMLprojectDescription.replace('%data%', project.description);
 
@@ -151,6 +153,7 @@ var bio, work, projects, education;
 
       project.images.forEach(function(img) {
         var formattedImg = HTMLprojectImage.replace('%data%', img);
+        formattedImg = formattedImg.replace('#', project.url);
         $entry.append(formattedImg);
       });
     });
