@@ -37,7 +37,8 @@ var bio, work, projects, education;
         'Full Stack web developer. Successfully implemented and participated ' +
         'in a lot of interesting and different projects with various ' +
         'technologies.' +
-        '<br><i>Tags: </i> Java, JPA, JAX-WS, Maven, MySQL, Linux, Bash, JS, HTML5, CSS, ' +
+        '<br><i>Tags: </i> Java, JPA, JAX-WS, Maven, MySQL, Linux, Bash, ' +
+        'JS, HTML5, CSS, ' +
         'LESS, Agile, Scrum, Kanban, Continious Integration, Jenkins, ' +
         'Python, Django'
     }]
@@ -49,8 +50,9 @@ var bio, work, projects, education;
       dates: '2016',
       description:
         'Variety of frontend projects are done with the help of Udacity. ' +
-        '<br><i>Tags: </i> HTML5, CSS, Bootstrap, JS, Responsiveness, Grunt, Semantic layout' +
-        ' JQuery ',
+        '<br><i>Tags: </i> HTML5, CSS, Bootstrap, JS, Responsiveness, ' +
+        'Grunt, Semantic layout, ' +
+        'JQuery ',
       images: ['images/project.jpg']
     }]
   };
@@ -136,7 +138,7 @@ var bio, work, projects, education;
       var formattedDescription = HTMLprojectDescription.replace('%data%', project.description);
 
       $('#projects').append(HTMLprojectStart);
-      var $entry = $('.project-entry:last')
+      var $entry = $('.project-entry:last');
       $entry.append([formattedTitle, formattedDates, formattedDescription]);
 
       project.images.forEach(function(img) {
@@ -171,6 +173,16 @@ var bio, work, projects, education;
       $('#education').append(HTMLschoolStart);
       var $entry = $('.education-entry:last');
       $entry.append([formattedTitle, formattedDates, formattedLink]);
+    });
+
+    $('#education').append(HTMLcertStart);
+    this.certifications.forEach(function(cert) {
+      var formattedTitle = HTMLcertTitle.replace('%data%', cert.title);
+      formattedTitle += HTMLcertDesc.replace('%data%', cert.description);
+      var formattedDate = HTMLcertDate.replace('%data%', cert.date);
+      $('#education').append(HTMLschoolStart);
+      var $entry = $('.education-entry:last');
+      $entry.append([formattedTitle, formattedDate]);
     });
 
     $('#education').append(HTMLlanguagesStart);

@@ -54,7 +54,7 @@ var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLschoolStart = '<div class="education-entry clear"></div>';
 var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
@@ -67,12 +67,17 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLlanguagesStart = '<h3>Languages</h3>';
+var HTMLlanguagesStart = '<h3 class="clear">Languages</h3>';
 var HTMLlanguagesList = '<div>%data%</div>'
+
+var HTMLcertStart = '<h3>Certifications</h3>';
+var HTMLcertTitle = '<a href="#">%data%';
+var HTMLcertDesc = ' - %data%</a>';
+var HTMLcertDate = '<div class="date-text">%data%</div>';
+var HTMLcertURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
-
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.

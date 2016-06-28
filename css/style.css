@@ -18,6 +18,10 @@ h6 {
   overflow: auto;
 }
 
+.clear {
+  clear: both;
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
