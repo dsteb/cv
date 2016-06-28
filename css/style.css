@@ -68,11 +68,11 @@ h5 {
 
 
 .date-text {
+  display: inline-block;
   font-style: italic;
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
 }
 
 .location-text {
@@ -176,6 +176,10 @@ span {
   text-align: center;
 }
 
+em {
+  display: block;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -218,5 +222,10 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+  .location-text {
+    display: inline-block;
+    float: none;
+    padding-left: 50px;
   }
 }
