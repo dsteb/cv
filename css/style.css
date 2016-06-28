@@ -22,6 +22,10 @@ h6 {
   clear: both;
 }
 
+.responsive-link {
+  padding: 1.2em 0 0.5em 0;
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
@@ -182,19 +186,19 @@ em {
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
   }
 }
 
-@media only screen and (max-width:900px) {
+@media (max-width:900px) {
   .biopic {
     width: 175px;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media (max-width: 750px) {
   #lets-connect {
     margin-top: 10%;
   }
@@ -202,6 +206,9 @@ em {
     width: 150px;
   }
   .welcome-message {
+    display: none;
+  }
+  .orange-text {
     display: none;
   }
 }
@@ -227,5 +234,8 @@ em {
     display: inline-block;
     float: none;
     padding-left: 50px;
+  }
+  i.fa {
+    display: none;
   }
 }
