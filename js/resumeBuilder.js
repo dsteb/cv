@@ -24,6 +24,7 @@ var bio, work, projects, education;
       title: 'Software Engineer',
       location: 'Milan, Italy',
       dates: 'Mar, 2015 - Current time',
+      url: 'http://www.vgs.com/',
       description:
         'Successfully implemented and passed certification of large ' +
         'Italian fiscal system (SIAE) for an existing ticketing software.' +
@@ -33,6 +34,7 @@ var bio, work, projects, education;
       title: 'Software Engineer',
       location: 'Saint-Petersburg, Russia',
       dates: 'Feb, 2010 -  Feb, 2014',
+      url: 'http://itrium.ru',
       description:
         'Full Stack web developer. Successfully implemented and participated ' +
         'in a lot of interesting and different projects with various ' +
@@ -64,32 +66,30 @@ var bio, work, projects, education;
       degree: 'MSc',
       majors: ['CS'],
       dates: '2014 — 2016',
-      url: 'polimi.it/en/'
+      url: 'http://polimi.it/en/'
     }, {
       name: 'Saint-Petersburg Electrotechnical University "LETI"',
       location: 'Saint-Petersburg, Russia',
       degree: 'MSc, BSc',
       majors: ['CS'],
       dates: '2004 — 2010',
-      url: 'eltech.ru/en'
+      url: 'http://eltech.ru/en'
     }],
     onlineCourses: [{
       title: 'Frontend Web Developer',
       school: 'Udacity',
       dates: '2016',
-      url: 'udacity.com'
+      url: 'https://udacity.com/course/front-end-web-developer-nanodegree--nd001'
     }],
     languages: ['Russian', 'English', 'Italian'],
     certifications: [{
       date: 'September, 2013',
       title: 'IELTS',
       description: 'International English Language Testing System',
-      url: ''
     }, {
       date: 'Febraury, 2011',
       title: 'Sun SCJP',
-      description: 'Oracle Sun Certified Java Programmer, SE 6',
-      url: 'https://en.wikipedia.org/wiki/Sun_Certified_Java_Programmer'
+      description: 'Oracle Sun Certified Java Programmer, SE 6'
     }]
   };
 
@@ -101,7 +101,7 @@ var bio, work, projects, education;
 
     $.each(this.contacts, function(key, value) {
       var template = HTMLcontacts[key] || HTMLcontactGeneric;
-      var formattedContact = template.replace('%contact%', key).replace('%data%', value);
+      var formattedContact = template.replace('%contact%', key).replace(/%data%/g, value);
       $('#topContacts').append(formattedContact);
       $('#footerContacts').append(formattedContact);
     });
@@ -119,6 +119,7 @@ var bio, work, projects, education;
   work.display = function() {
     this.jobs.forEach(function(job) {
       var formattedTitle = HTMLworkEmployer.replace('%data%', job.employer);
+      formattedTitle = formattedTitle.replace('#', job.url);
       formattedTitle += HTMLworkTitle.replace('%data%', job.title);
       var formattedDates = HTMLworkDates.replace('%data%', job.dates);
       var formattedLocation = HTMLworkLocation.replace('%data%', job.location);
@@ -151,46 +152,45 @@ var bio, work, projects, education;
   education.display = function() {
     this.schools.forEach(function(school) {
       var formattedTitle = HTMLschoolName.replace('%data%', school.name);
+      formattedTitle = formattedTitle.replace('#', school.url);
       formattedTitle += HTMLschoolDegree.replace('%data%', school.degree);
       var formattedDates = HTMLschoolDates.replace('%data%', school.dates);
       var formattedLocation = HTMLschoolLocation.replace('%data%', school.location);
       var majors = school.majors.join(', ');
       var formattedMajor = HTMLschoolMajor.replace('%data%', majors);
 
-      $('#education').append(HTMLschoolStart);
+      $('#schools').append(HTMLschoolStart);
       var $entry = $('.education-entry:last');
       $entry.append([formattedTitle, formattedDates, formattedLocation,
         formattedMajor]);
     });
 
-    $('#education').append(HTMLonlineClasses);
+    $('#classes').append(HTMLonlineClasses);
     this.onlineCourses.forEach(function(course) {
       var formattedTitle = HTMLonlineTitle.replace('%data%', course.title);
+      formattedTitle = formattedTitle.replace('#', course.url);
       formattedTitle += HTMLonlineSchool.replace('%data%', course.school);
       var formattedDates = HTMLonlineDates.replace('%data%', course.dates);
-      var formattedLink = HTMLonlineURL.replace('%data%', course.url);
 
-      $('#education').append(HTMLschoolStart);
+      $('#classes').append(HTMLschoolStart);
       var $entry = $('.education-entry:last');
-      $entry.append([formattedTitle, formattedDates, formattedLink]);
+      $entry.append([formattedTitle, formattedDates]);
     });
 
-    $('#education').append(HTMLcertStart);
+    $('#certs').append(HTMLcertStart);
     this.certifications.forEach(function(cert) {
       var formattedTitle = HTMLcertTitle.replace('%data%', cert.title);
       formattedTitle += HTMLcertDesc.replace('%data%', cert.description);
       var formattedDate = HTMLcertDate.replace('%data%', cert.date);
-      $('#education').append(HTMLschoolStart);
+      $('#certs').append(HTMLschoolStart);
       var $entry = $('.education-entry:last');
       $entry.append([formattedTitle, formattedDate]);
     });
 
-    $('#education').append(HTMLlanguagesStart);
+    $('#languages').append(HTMLlanguagesStart);
     var languages = this.languages.join(', ');
     var formattedLanguages = HTMLlanguagesList.replace('%data%', languages);
-    $('#education').append(HTMLschoolStart);
-    var $entry = $('.education-entry:last');
-    $entry.append(formattedLanguages);
+    $('#languages').append(formattedLanguages);
   };
 
   bio.display();

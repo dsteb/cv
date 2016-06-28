@@ -26,6 +26,7 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -61,7 +62,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
+  padding: 10px 5%;
 
 }
 
@@ -92,7 +93,9 @@ p {
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
+}
+
+.block {
   display: block;
 }
 
