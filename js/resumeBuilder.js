@@ -9,12 +9,12 @@ var bio, work, projects, education;
     contacts: {
       mobile: '(+39) 327-568-43-13',
       email: 'dsteblyuk@gmail.com',
-      github: 'https://github.com/n43jl',
-      location: 'Milan, Italy',
-      linkedin: 'https://linkedin.com/in/dmitrii-stebliuk'
+      github: 'dsteb',
+      linkedin: 'dsteb',
+      location: 'Milan, Italy'
     },
     welcomeMessage: 'Life is study',
-    skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Javascript', 'JQuery', 'Python', 'Linux'],
+    skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Bootstrap', 'Javascript', 'JQuery', 'Python', 'Linux'],
     biopic: 'images/fry.jpg',
   };
 
@@ -26,16 +26,20 @@ var bio, work, projects, education;
       dates: 'Mar, 2015 - Current time',
       description:
         'Successfully implemented and passed certification of large ' +
-        'Italian fiscal system (SIAE) for an existing ticketing software. ' +
-        'Rich javascript PDF editor for building reports with iText. ' +
-        'Responsibility for Linux DevOps tasks.'
+        'Italian fiscal system (SIAE) for an existing ticketing software.' +
+        '<br><i>Tags: </i> Java8, MSSQL, Linux, Javascript, HTML, CSS, Tomcat, Apache'
     }, {
       employer: 'Itrium-SPb',
       title: 'Software Engineer',
       location: 'Saint-Petersburg, Russia',
       dates: 'Feb, 2010 -  Feb, 2014',
       description:
-        'Full Stack web developer. Writing security / alarm system. '
+        'Full Stack web developer. Successfully implemented and participated ' +
+        'in a lot of interesting and different projects with various ' +
+        'technologies.' +
+        '<br><i>Tags: </i> Java, JPA, JAX-WS, Maven, MySQL, Linux, Bash, JS, HTML5, CSS, ' +
+        'LESS, Agile, Scrum, Kanban, Continious Integration, Jenkins, ' +
+        'Python, Django'
     }]
   };
 
@@ -44,9 +48,10 @@ var bio, work, projects, education;
       title: 'Portfolio',
       dates: '2016',
       description:
-        'The project is done during the Udacity ' +
-        '"Frontend Web Developer" nanodegree program.',
-      images: ['images/197x148.gif', 'images/197x148.gif']
+        'Variety of frontend projects are done with the help of Udacity. ' +
+        '<br><i>Tags: </i> HTML5, CSS, Bootstrap, JS, Responsiveness, Grunt, Semantic layout' +
+        ' JQuery ',
+      images: ['images/project.jpg']
     }]
   };
 
@@ -54,23 +59,23 @@ var bio, work, projects, education;
     schools: [{
       name: 'Politecnico di Milano',
       location: 'Milano, Italy',
-      degree: 'MSc-CS',
+      degree: 'MSc',
       majors: ['CS'],
       dates: '2014 — 2016',
-      url: 'http://polimi.it/en/'
+      url: 'polimi.it/en/'
     }, {
       name: 'Saint-Petersburg Electrotechnical University "LETI"',
       location: 'Saint-Petersburg, Russia',
       degree: 'MSc-CS, BSc',
       majors: ['CS'],
       dates: '2004 — 2010',
-      url: 'http://eltech.ru/en'
+      url: 'eltech.ru/en'
     }],
     onlineCourses: [{
       title: 'Frontend Web Developer',
       school: 'Udacity',
       dates: '2016',
-      url: 'http://udacity.com'
+      url: 'udacity.com'
     }]
   };
 
