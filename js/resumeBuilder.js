@@ -10,7 +10,8 @@ var bio, work, projects, education;
       mobile: '(+39) 327-568-43-13',
       email: 'dsteblyuk@gmail.com',
       github: 'https://github.com/n43jl',
-      location: 'Milan, Italy'
+      location: 'Milan, Italy',
+      linkedin: 'https://linkedin.com/in/dmitrii-stebliuk'
     },
     welcomeMessage: 'Life is study',
     skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Javascript', 'JQuery', 'Python'],
@@ -22,12 +23,19 @@ var bio, work, projects, education;
       employer: 'VGS srl',
       title: 'Software Engineer',
       location: 'Milan, Italy',
-      dates: 'March, 2015 - Current time',
+      dates: 'Mar, 2015 - Current time',
       description:
         'Successfully implemented and passed certification with large ' +
-        'Italian fiscal system (SIAE) for existing ticketing software. ' +
+        'Italian fiscal system (SIAE) for an existing ticketing software. ' +
         'Rich javascript PDF editor for building reports with iText. ' +
         'Responsibility for Linux DevOps tasks.'
+    }, {
+      employer: 'Itrium-SPb',
+      title: 'Software Engineer',
+      location: 'Saint-Petersburg, Russia',
+      dates: 'Feb, 2010 -  Feb, 2014',
+      description:
+        'Full Stack web developer. Writing security / alarm system. '
     }]
   };
 
@@ -46,10 +54,17 @@ var bio, work, projects, education;
     schools: [{
       name: 'Politecnico di Milano',
       location: 'Milano, Italy',
-      degree: 'MSc',
+      degree: 'MSc-CS',
       majors: ['CS'],
       dates: '2014 — 2016',
       url: 'http://polimi.it/en/'
+    }, {
+      name: 'Saint-Petersburg Electrotechnical University "LETI"',
+      location: 'Saint-Petersburg, Russia',
+      degree: 'MSc-CS, BSc',
+      majors: ['CS'],
+      dates: '2004 — 2010',
+      url: 'http://eltech.ru/en'
     }],
     onlineCourses: [{
       title: 'Frontend Web Developer',
@@ -66,7 +81,7 @@ var bio, work, projects, education;
     var formattedMsg = HTMLwelcomeMsg.replace('%data%', this.welcomeMessage);
 
     $.each(this.contacts, function(key, value) {
-      var template = HTMLcontacts[key];
+      var template = HTMLcontacts[key] || HTMLcontactGeneric;
       var formattedContact = template.replace('%contact%', key).replace('%data%', value);
       $('#topContacts').append(formattedContact);
       $('#footerContacts').append(formattedContact);
