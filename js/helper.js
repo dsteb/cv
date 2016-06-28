@@ -146,6 +146,10 @@ function initializeMap() {
     // initializes an empty array
     var locations = [];
 
+    bio.customLocations.forEach(function(location) {
+      locations.push(location);
+    });
+
     // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
 
@@ -192,12 +196,13 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: '<h4>' + name + '</h4><p>' + bio.locationDescription[placeData.name] + '</p>'
     });
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      var content = '<h4>' + name
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
