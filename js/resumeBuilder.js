@@ -15,7 +15,7 @@ var bio, work, projects, education;
     },
     welcomeMessage: 'Life is study',
     skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Bootstrap', 'Javascript', 'JQuery', 'Python', 'Linux'],
-    biopic: 'images/fry.jpg',
+    biopic: 'images/dima.jpg',
   };
 
   work = {
@@ -66,7 +66,7 @@ var bio, work, projects, education;
     }, {
       name: 'Saint-Petersburg Electrotechnical University "LETI"',
       location: 'Saint-Petersburg, Russia',
-      degree: 'MSc-CS, BSc',
+      degree: 'MSc, BSc',
       majors: ['CS'],
       dates: '2004 — 2010',
       url: 'eltech.ru/en'
@@ -76,6 +76,18 @@ var bio, work, projects, education;
       school: 'Udacity',
       dates: '2016',
       url: 'udacity.com'
+    }],
+    languages: ['Russian', 'English', 'Italian'],
+    certifications: [{
+      date: 'September, 2013',
+      title: 'IELTS',
+      description: 'International English Language Testing System',
+      url: ''
+    }, {
+      date: 'Febraury, 2011',
+      title: 'Sun SCJP',
+      description: 'Oracle Sun Certified Java Programmer, SE 6',
+      url: 'https://en.wikipedia.org/wiki/Sun_Certified_Java_Programmer'
     }]
   };
 
@@ -160,6 +172,13 @@ var bio, work, projects, education;
       var $entry = $('.education-entry:last');
       $entry.append([formattedTitle, formattedDates, formattedLink]);
     });
+
+    $('#education').append(HTMLlanguagesStart);
+    var languages = this.languages.join(', ');
+    var formattedLanguages = HTMLlanguagesList.replace('%data%', languages);
+    $('#education').append(HTMLschoolStart);
+    var $entry = $('.education-entry:last');
+    $entry.append(formattedLanguages);
   };
 
   bio.display();
