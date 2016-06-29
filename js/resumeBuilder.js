@@ -23,7 +23,7 @@ var bio, work, projects, education;
     'Krasnoyarsk': 'Here I was born and finished my high school.',
     'Saint Petersburg': 'Here I got Bachelor, Master degrees and my working experience',
     'Milan': 'Here I got my second Master degree and continue to work and enjoy my life'
-  }
+  };
 
   work = {
     jobs: [{

@@ -69,7 +69,7 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var HTMLlanguagesStart = '<h3 class="clear">Languages</h3>';
-var HTMLlanguagesList = '<div class="education-entry">%data%</div>'
+var HTMLlanguagesList = '<div class="education-entry">%data%</div>';
 
 var HTMLcertStart = '<h3 class="clear">Certifications</h3>';
 var HTMLcertTitle = '<div>%data%';
@@ -201,7 +201,6 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      var content = '<h4>' + name
       infoWindow.open(map, marker);
     });
 
