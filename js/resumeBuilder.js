@@ -7,30 +7,42 @@ var bio, work, projects, education;
     name: 'Dmitrii Stebliuk',
     role: 'Senior Full Stack Developer',
     contacts: {
-      mobile: '(+39) 327-568-43-13',
-      email: 'dsteblyuk@gmail.com',
+      mobile: '(+49) 1520 34-22-327',
+      email: 'dstebliuk@gmail.com',
       github: 'dsteb',
       linkedin: 'dsteb',
-      location: 'Milan, Italy'
+      location: 'Berlin'
     },
     welcomeMessage: 'Life is study',
-    skills: ['Java', 'SQL', 'HTML5', 'CSS', 'Bootstrap', 'Javascript', 'JQuery', 'Python', 'Linux'],
+    skills: ['Java 9', 'Spring', 'Microservices', 'NoSQL', 'MongoDB', 'NodeJS', 'Kafka', 'Google Pub/Sub', 'SQL', 'HTML5', 'CSS', 'Bootstrap',
+       'Javascript', 'JQuery', 'Python', 'Linux', 'GCP', 'K8s', 'TDD', 'Mockito', 'Spock'],
     biopic: 'images/dima.jpg',
     customLocations: ['Krasnoyarsk, Russia']
   };
 
   bio.locationDescription = {
     'Krasnoyarsk': 'Here I was born and finished my high school.',
-    'Saint Petersburg': 'Here I got Bachelor, Master degrees and my working experience',
-    'Milan': 'Here I got my second Master degree and continue to work and enjoy my life'
+    'Saint Petersburg': 'Here I got Bachelor, Master degrees and my working experience.',
+    'Milan': 'Here I got my second Master degree and continued to work and enjoy my life.',
+    'Berlin': 'Here I continue to work and enjoy my life.'
   }
 
   work = {
     jobs: [{
+      employer: 'Zenhomes Gmbh',
+      title: 'Software Engineer',
+      location: 'Berlin, Germany',
+      dates: 'Feb, 2017 - Current time',
+      url: 'http://www.vermietet.de/',
+      description:
+        'Designed and implemented complex scalable application within a team of just 2 Backend Software Engineers.' +
+        '<br><i>Tags: </i> Microservices, Java 9, Spring Boot, Spring Cloud, mvn, Kotlin, NodeJS, yarn,  Kafka, Google Pub/Sub, GitHub, MongoDB, MySQL,' + 
+        'Quartz, Linux, DevOps, GCP, Kubernetes, Docker, Wercker, JUnit, Mockito, Groovy, Spock, SonarQube.'
+    }, {
       employer: 'VGS srl',
       title: 'Software Engineer',
       location: 'Milan, Italy',
-      dates: 'Mar, 2015 - Current time',
+      dates: 'Mar, 2015 - Jan, 2017',
       url: 'http://www.vgs.com/',
       description:
         'Successfully implemented and passed certification of large ' +
